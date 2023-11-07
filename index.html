@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #ffffff;
+            color: rgb(14, 13, 13);
+            display: flex;
+        }
+
+        .menu-button {
+            cursor: pointer;
+            display: none;
+        }
+        input{
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            flex: 3;
+            justify-content: center; 
+            margin-left: 20%;
+        
+        }
+
+        li {
+            padding:10px ;
+            word-spacing: 5px;
+            letter-spacing: 3px;
+            
+          
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(33, 32, 32);
+            font-weight: 600;
+            
+        }
+
+        .icons {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            gap: 20px;
+            font-size: 1.4rem;
+            color: var(--red);
+            justify-content: end;
+        }
+
+        .hero {
+            padding: 20px;
+            min-height: 80vh;
+            background: linear-gradient(315deg, #00000025, rgba(0, 0, 0, 0.224)00), url('https://res.cloudinary.com/dvg5dlcir/image/upload/v1699352035/fb96obvslotxjec53hcr.jpg') no-repeat center;
+            background-size: cover;
+        }
+
+        .hero-text-wrapper {
+            max-width: 46%;
+            display: flex;
+            min-height: 100%;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .hero-text {
+            background-color: rgba(239, 118, 118, 0.549);
+            padding: 30px 10px;
+            color: #fff;
+
+
+        }
+
+        .hero-heading {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .order_food {
+            background: linear-gradient(48deg, rgb(160, 11, 98), rgb(241, 239, 70));
+            min-height: 80vh;
+            padding: 60px 0;
+        }
+        
+        .devider {
+            min-height: 3px;
+            width: 100%;
+            background: #6e6a6a;
+            padding: 2px;
+            flex-flow:initial;
+        }
+
+        .order-heading {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .toggler {
+            display: none;
+        }
+        .cards-container{
+            display: flex;
+            gap: 20px;
+            flex-flow: row wrap;
+            padding: 20px;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .product-card{
+            min-width: 200px;
+            max-width: 280px;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 50px 0 50px;
+        }
+        .product-card img{
+            width: 100%;
+            height: 270px;
+            border-radius: 0 50px 0 0;
+            margin-bottom: 20px;
+        }
+        .order-btn{
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 100px;
+            background-color: rgba(215, 210, 210, 0.547);
+            font-weight: bold;
+            min-width: 150px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        [class*="fa-"]{
+            padding: 4px;
+        }
+        .fa-phone{
+            padding: 4px;
+            font-size: 1.1rem;
+            border: 2px solid #000;
+            border-radius: 100px;
+        }
+        @media (max-width:250px){
+            .product-card{
+                min-width: 100% !important;
+            }
+            .order-btn{
+                min-width: 100% !important;
+            }
+        }
+@media (max-width:600px){
+    .hero-heading{
+        font-size: 2rem;
+    }
+    .product-card img{
+        height: 180px;
+    }
+}
+        @media (max-width:900px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: start;
+                position: relative;
+            }
+            .icons{
+                display: none;
+            }
+
+            #nav-toggle {
+                display: none;
+            }
+
+            nav {
+                display: block;
+                position: absolute;
+                top: 0px;
+                /* Adjust this as needed */
+                right: 0;
+                width: 100%;
+            }
+
+            .menu-button {
+                display: block;
+                padding: 10px;
+                background-color: rgb(255, 255, 255)040;
+            }
+
+            ul {
+                display: none;
+            }
+
+            #nav-toggle:checked+nav ul {
+                display: block;
+            }
+            #nav-toggle:checked+nav .icons {
+                display: block;
+            }
+
+            .toggler button:active~nav {
+                display: block;
+            }
+            
+            /* hero text  */
+            .hero{
+                padding: 10px;
+            }
+            .hero-text-wrapper{
+                min-width: 100%;
+            }
+        }
+        @media (max-width:200px){
+            .hero-heading{
+                font-size: 1rem;
+            }
+            .product-card img{
+              height: 100px !important;
+                }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <input type="checkbox" id="nav-toggle">
+            <nav>
+                <label for="nav-toggle" class="menu-button">&#9776; Menu</label>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Order</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Restaurant</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="icons">
+                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-cart-shopping"></i>
+                    <div class="toggler">
+                        <button>open</button>
+                    </div>
+                </div>
+            </nav>
+            
+
+        </header>
+        <div class="hero">
+            <div class="hero-text-wrapper">
+                <div class="hero-text">
+                    <h1 class="hero-heading">Lorem ipsum</h1>
+                    <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum suscipit
+                        aut dolor molestias ut animi eligendi in optio debitis corrupti sed sunt iusto nulla odit
+                        repellendus perferendis eaque, similique nobis.</p>
+                </div>
+            </div>
+        </div>
+        <section class="order_food">
+            <div class="devider"></div>
+            <center>
+                <h1 class="order-heading">Order Now</h1>
+            </center>
+            <div class="cards-container">
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/dvg5dlcir/image/upload/v1699352169/bvjqynetwpwmfbqx6if2.jpg" alt="">
+                    <h3 style="margin-bottom: 10px;">BURGER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/dvg5dlcir/image/upload/v1699352250/i2g5ietoqwhspx60sssk.jpg" alt="">
+                    <h3 style="margin-bottom: 10px;">PIZZ</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                </div>
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/dvg5dlcir/image/upload/v1699352314/qpredynovs0hvfhss6vs.jpg" alt="">
+                    <h3 style="margin-bottom: 10px;">PASTA</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <center>
+                <button class="order-btn">Order</button>
+            </center>
+        </section>
+</body>
+
+</html>
